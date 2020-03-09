@@ -38,10 +38,10 @@ set_eslint_prettier:
 	cp -r $(CONFIG_DIR)/. $(APP_DIR)
 
 add_npm_run_lint:
-	sed -i '/react-scripts start/i\    "lint": "eslint src",' $(APP_DIR)/package.json
+	sed -i '/react-scripts start/i\    "lint": "eslint --ext .js,.jsx src",' $(APP_DIR)/package.json
 
 add_npm_run_format:
-	sed -i '/react-scripts start/i\    "format": "eslint --fix src",' $(APP_DIR)/package.json
+	sed -i '/react-scripts start/i\    "format": "eslint --fix --ext .js,.jsx src",' $(APP_DIR)/package.json
 
 clean:
 	rm -rf $(WORKSPACE)
