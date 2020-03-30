@@ -32,7 +32,7 @@ creat_react: docker_build
 	mkdir -p $(WORKSPACE)
 	$(RUN) npx create-react-app $(APP_NAME) \
 		&& cd $(APP_DIR) \
-		&& npm i -D prettier eslint-config-prettier eslint-plugin-prettier
+		&& npm i -D prettier eslint-config-prettier eslint-plugin-prettier eslint-plugin-sonarjs eslint-config-airbnb
 	
 set_eslint_prettier: 
 	cp -r $(CONFIG_DIR)/. $(APP_DIR)
