@@ -18,3 +18,6 @@ make init
   - Set `DOCKER_BUILDKIT=1` with docker CLI
   - Set `COMPOSE_DOCKER_CLI_BUILD=1` with docker-compose CLI
   - Using `RUN --mount=type=cache` in Dockerfile which begin with `# syntax = docker/dockerfile:experimental`
+
+## Read More
+[useEffect and exhaustive-deps](https://pauldrummond.dev/posts/useeffect-and-exhaustive-deps/)
