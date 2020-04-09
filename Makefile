@@ -20,7 +20,7 @@ WORKSPACE=$(PWD)/workspace
 APP_DIR=$(WORKSPACE)/$(APP_NAME)
 RUN=docker run --rm -u $(shell id -u):$(shell id -g) -v $(WORKSPACE):/workspace $(APP_NAME)
 CONFIG_DIR=configs/
-DEPS=clean docker_build creat_react set_eslint_prettier add_npm_run_lint add_npm_run_format
+DEPS=clean docker_build creat_react set_configs add_npm_run_lint add_npm_run_format
 .PHONY: init $(DEPS)
 
 init: $(DEPS) ## init react app with recommended config
@@ -33,8 +33,9 @@ creat_react: docker_build
 	$(RUN) npx create-react-app $(APP_NAME) \
 		&& cd $(APP_DIR) \
 		&& npm i -D prettier eslint-config-prettier eslint-plugin-prettier eslint-plugin-sonarjs eslint-config-airbnb
+		&& npm i -D enzyme enzyme-adapter-react-16 nock
 	
-set_eslint_prettier: 
+set_configs: 
 	cp -r $(CONFIG_DIR)/. $(APP_DIR)
 
 add_npm_run_lint:

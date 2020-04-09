@@ -11,6 +11,8 @@ make init
   - [.eslintrc.js](https://github.com/acefei/ace-react/blob/master/configs/.eslintrc.js)
   - [.prettierrc.js](https://github.com/acefei/ace-react/blob/master/configs/.prettierrc.js)
   - [.vscode](https://github.com/acefei/ace-react/tree/master/configs/.vscode)
+  - [setupTests.js](https://github.com/acefei/ace-react/tree/master/configs/setupTests.js)
+    - We don't need to add setupFilesAfterEnv for Jest config and just put setupTests.js into src/ dir, the rest of thing has been done by react-script (3.4.0) which is installed by create-react-app.
 
 - Multi-stage [Dockerfile](https://github.com/acefei/ace-react/blob/master/configs/Dockerfile) for CI/CD
 
